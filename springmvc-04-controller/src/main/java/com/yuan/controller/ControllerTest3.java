@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
  * @Date: 2022/6/9-15:29
  */
 @Controller
-
 public class ControllerTest3{
     @RequestMapping("/c3/t1")
     public String test1(Model model){
