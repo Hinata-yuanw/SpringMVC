@@ -36,9 +36,22 @@
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           id="internalResourceViewResolver">
         <!-- 前缀 -->
-        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="prefix" value="/WEB-INF/jsp/"/>
         <!-- 后缀 -->
-        <property name="suffix" value=".jsp" />
+        <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!-- 拦截器配置 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- /** 包括这个请求下面的所有请求 -->
+            <mvc:mapping path="/**"/>
+            <bean class="com.yuan.config.MyInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <!-- /** 包括这个请求下面的所有请求 -->
+            <mvc:mapping path="/user/**"/>
+            <bean class="com.yuan.config.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

@@ -44,4 +44,24 @@ public class AjaxController {
 
         return userList;
     }
+
+    @RequestMapping("/a3")
+    public String a3(String name,String pwd){
+        String msg = "";
+        if (name!=null){
+            if ("admin".equals(name)){
+                msg = "ok";
+            }else {
+                msg = "用户名错误";
+            }
+        }
+        if (pwd!=null){
+            if ("admin".equals(pwd)){
+                msg = "ok";
+            }else {
+                msg = "密码错误";
+            }
+        }
+        return msg;
+    }
 }
